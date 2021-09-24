@@ -1,5 +1,6 @@
-const strings= {
-    SOURCES: "Sources"
-}
+const strings = {
+  SOURCES: "Sources",
+  FAVOURITES: "Favourites",
+};
 
 export default strings;

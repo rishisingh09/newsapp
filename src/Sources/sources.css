@@ -5,3 +5,37 @@
   background-color: lightyellow;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.header {
+  height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 10px;
+}
+hr.MuiDivider-root.MuiDivider-middle.css-ft4jij-MuiDivider-root {
+  border-color: black;
+}
+
+.sourceName {
+  max-height: 580px;
+  overflow-y: scroll;
+}
+
+.name {
+  min-height: 30px;
+  width: 100%;
+  padding-top: 10px;
+  padding-left: 10px;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.favourite {
+  height: 40px;
+  text-align: left;
+  padding: 15px 10px;
+}
+.name:hover {
+  background-color: #464646;
+}
