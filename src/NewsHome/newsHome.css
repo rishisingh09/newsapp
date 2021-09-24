@@ -1,0 +1,50 @@
+.container {
+  position: relative;
+  min-height: 100vh;
+  min-width: 100vh;
+  background-color: aquamarine;
+  padding: 100px 20px;
+  opacity: 0.2;
+}
+
+.newsContainer {
+  display: flex;
+  min-height: 700px;
+  width: 1200px;
+  margin: auto;
+  padding: 10px;
+  background: #00416a; /* fallback for old browsers */
+  border-radius: 20px;
+  background: -webkit-linear-gradient(
+    to right,
+    #e4e5e6,
+    #00416a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #e4e5e6,
+    #00416a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.firstSection {
+  min-height: 100%;
+  width: 20%;
+}
+
+.secondSection {
+  min-height: 100%;
+  width: 30%;
+  padding: 0px 5px;
+}
+
+.thirdSection {
+  min-height: 100%;
+  width: 50%;
+}
+
+
+
+
+
+
