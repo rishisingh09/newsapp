@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { getHeadlinesUtils } from "../Utilities/Utilities";
-import Checkbox from "@mui/material/Checkbox";
+import Checkbox from '@mui/material/Checkbox';
+
 
 import "./news.css";
 // import lang from "../constants/strings";
@@ -36,7 +37,7 @@ function News(props) {
             <div className="heading">Hello</div>
             <div className="timeDate">22:00</div>
             <div className="star">
-              <Checkbox />
+              <Checkbox/>
             </div>
           </div>
         </div>
