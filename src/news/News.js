@@ -9,7 +9,7 @@ function News(props) {
   return (
     <div>
       <div className="news">
-        <div className="newsSourceName">Hello</div>
+        <div className="newsSourceName">{props.name}</div>
         <Divider variant="middle" />
       </div>
     </div>

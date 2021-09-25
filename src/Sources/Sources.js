@@ -6,12 +6,9 @@ import Divider from "@mui/material/Divider";
 
 function Sources(props) {
   const [news, setNews] = useState([]);
-  const [name, setName] = useState("");
-  const [id, setId] = useState("");
 
   const handleClick = (source) => {
-    setName(source.name);
-    setId(source.id);
+    props.sendData(source);
   };
 
   const getNews = async () => {
