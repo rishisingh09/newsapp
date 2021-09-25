@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { getNewsUtils } from "../Utilities/Utilities";
 import "./sources.css";
 import lang from "../constants/strings";
@@ -12,16 +12,16 @@ function Sources(props) {
   };
 
   const getNews = async () => {
-    const response = await getNewsUtils();
-    console.log(response.data.sources);
-    setNews(response.data.sources);
+    try {
+      const response = await getNewsUtils();
+      setNews(response.data.sources);
+    } catch (error) {}
+
   };
 
   // useEffect(() => {
   //   getNews();
   // }, []);
-
-  // console.log("Name:", name, "id:", id);
 
   return (
     <div>
