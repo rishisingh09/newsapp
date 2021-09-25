@@ -6,9 +6,56 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.newsSourceName{
+.newsSourceName {
   height: 40px;
   text-align: center;
   vertical-align: middle;
   padding-top: 10px;
+}
+
+.headlines {
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 100px;
+  width: 95%;
+  background-color: lightgray;
+  border-radius: 10px;
+  display: flex;
+  padding: 5px;
+  align-items: center;
+}
+
+.imageContainer {
+  height: 90%;
+  width: 30%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+hr.MuiDivider-root.MuiDivider-middle.MuiDivider-vertical.MuiDivider-flexItem.css-16bghm4-MuiDivider-root {
+  border-color: black;
+}
+
+.headlineDetails {
+  height: 90%;
+  width: 70%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-left: 5px;
+  padding: 5px 5px 5px 15px;
+}
+
+.heading {
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.timeDate {
+  color: #464646;
+}
+
+.star {
+  height: 20px;
 }

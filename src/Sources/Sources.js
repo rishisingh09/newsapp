@@ -17,9 +17,9 @@ function Sources(props) {
     setNews(response.data.sources);
   };
 
-  useEffect(() => {
-    getNews();
-  }, []);
+  // useEffect(() => {
+  //   getNews();
+  // }, []);
 
   // console.log("Name:", name, "id:", id);
 

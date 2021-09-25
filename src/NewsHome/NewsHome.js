@@ -13,8 +13,8 @@ function NewsHome(props) {
     setName(name.name);
   };
 
-  console.log("Name:", name);
-  console.log("Id:", id);
+  // console.log("Name:", name);
+  // console.log("Id:", id);
 
   return (
     <div className="container">
@@ -23,7 +23,7 @@ function NewsHome(props) {
           <Sources sendData={getData} />
         </div>
         <div className="secondSection">
-          <News name={name} />
+          <News id={id} />
         </div>
         <div className="thirdSection">
           <Details />
