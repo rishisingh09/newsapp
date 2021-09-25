@@ -4,8 +4,6 @@ import "./sources.css";
 import lang from "../constants/strings";
 import Divider from "@mui/material/Divider";
 
-var newsDetailContext = React.createContext(null);
-
 function Sources(props) {
   const [news, setNews] = useState([]);
   const [name, setName] = useState("");
@@ -29,32 +27,30 @@ function Sources(props) {
   // console.log("Name:", name, "id:", id);
 
   return (
-    <newsDetailContext.Provider value={name}>
-      <div>
-        <div className="sources">
-          <div className="header">{lang.SOURCES}</div>
-          <Divider variant="middle" />
-          <div className="sourceName">
-            {news.map((source) => {
-              return (
-                <div
-                  key={source.id}
-                  className="name"
-                  onClick={() => handleClick(source)}
-                >
-                  {source.name}
-                </div>
-              );
-            })}
-          </div>
-          <div className="sourceName"></div>
-          <Divider variant="middle" />
-          <div className="favourite">
-            <div className="count">{lang.FAVOURITES} :</div>
-          </div>
+    <div>
+      <div className="sources">
+        <div className="header">{lang.SOURCES}</div>
+        <Divider variant="middle" />
+        <div className="sourceName">
+          {news.map((source) => {
+            return (
+              <div
+                key={source.id}
+                className="name"
+                onClick={() => handleClick(source)}
+              >
+                {source.name}
+              </div>
+            );
+          })}
+        </div>
+        <div className="sourceName"></div>
+        <Divider variant="middle" />
+        <div className="favourite">
+          <div className="count">{lang.FAVOURITES} :</div>
         </div>
       </div>
-    </newsDetailContext.Provider>
+    </div>
   );
 }
 
