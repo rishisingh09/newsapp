@@ -6,6 +6,11 @@ import Divider from "@mui/material/Divider";
 
 function Sources(props) {
   const [news, setNews] = useState([]);
+  const [id, setId] = useState("");
+
+  const handleId = (id) => {
+    setId(id);
+  };
 
   const getNews = async () => {
     const response = await getNewsUtils();
@@ -17,16 +22,22 @@ function Sources(props) {
     getNews();
   }, []);
 
+  console.log(id);
+
   return (
     <div>
       <div className="sources">
         <div className="header">{lang.SOURCES}</div>
         <Divider variant="middle" />
         <div className="sourceName">
-          {news.map((name) => {
+          {news.map((source) => {
             return (
-              <div key={name.id} className="name">
-                {name.name}
+              <div
+                key={source.id}
+                className="name"
+                onClick={() => handleId(source.id)}
+              >
+                {source.name}
               </div>
             );
           })}
@@ -34,7 +45,7 @@ function Sources(props) {
         <div className="sourceName"></div>
         <Divider variant="middle" />
         <div className="favourite">
-          <div className="count">{lang.FAVOURITES}</div>
+          <div className="count">{lang.FAVOURITES} :</div>
         </div>
       </div>
     </div>

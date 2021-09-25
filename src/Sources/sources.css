@@ -37,5 +37,7 @@ hr.MuiDivider-root.MuiDivider-middle.css-ft4jij-MuiDivider-root {
   padding: 15px 10px;
 }
 .name:hover {
-  background-color: #464646;
+  font-size: 18px;
+  transition: ease-in-out;
+  text-decoration: underline;
 }
