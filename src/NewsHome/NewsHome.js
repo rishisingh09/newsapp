@@ -1,7 +1,7 @@
 import React from "react";
 import Sources from "../Sources/Sources";
 import "./newsHome.css";
-import News from "../news/News";
+import News from "../News/News";
 import Details from "../Details/Details";
 
 function NewsHome(props) {

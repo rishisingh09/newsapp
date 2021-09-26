@@ -2,7 +2,6 @@ import React from "react";
 import { getHeadlinesUtils } from "../Utilities/Utilities";
 import Checkbox from "@mui/material/Checkbox";
 import "./news.css";
-// import lang from "../constants/strings";
 import Divider from "@mui/material/Divider";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
