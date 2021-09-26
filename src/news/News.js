@@ -1,34 +1,28 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { getHeadlinesUtils } from "../Utilities/Utilities";
-import Checkbox from '@mui/material/Checkbox';
-
-
+import Checkbox from "@mui/material/Checkbox";
 import "./news.css";
-// import lang from "../constants/strings";
 import Divider from "@mui/material/Divider";
+import NewsContext from "../Context/NewsContext";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 function News(props) {
-  const [headLines, setHeadLines] = useState([]);
-  const [id, setId] = useState("");
-  const [name, setName] = useState("");
+  const newsSource = useContext(NewsContext);
 
-  const getHeadlines = async () => {
-    try {
-      const response = await getHeadlinesUtils(id);
-      setHeadLines(response.data.articles);
-    } catch (error) {}
-  };
-  // useEffect(() => {
-  //   setId(props.id);
-  //   setName(props.name);
-  //   getHeadlines();
-  // }, [props.id]);
+  // const getHeadlines = async () => {
+  //   try {
+  //     const response = await getHeadlinesUtils(id);
+  //     setHeadLines(response.data.articles);
+  //   } catch (error) {}
+  // };
+
+  console.log(newsSource);
+
   return (
     <div>
       <div className="news">
-        <div className="newsSourceName">{name}</div>
+        <div className="newsSourceName">News Heading</div>
         <Divider variant="middle" />
         <div className="headlines">
           <div className="imageContainer"></div>
@@ -37,7 +31,7 @@ function News(props) {
             <div className="heading">Hello</div>
             <div className="timeDate">22:00</div>
             <div className="star">
-              <Checkbox/>
+              <Checkbox />
             </div>
           </div>
         </div>
