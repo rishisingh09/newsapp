@@ -5,18 +5,21 @@ import Divider from "@mui/material/Divider";
 import "./sources.css";
 
 function Sources(props) {
-  const sources = useContext(NewsContext);
+  const sourceContext = useContext(NewsContext);
 
-  console.log(sources);
   return (
     <div>
       <div className="sources">
         <div className="header">{lang.SOURCES}</div>
         <Divider variant="middle" />
         <div className="sourceName">
-          {sources.map((source) => {
+          {sourceContext.sources.map((source) => {
             return (
-              <div key={source.id} className="name">
+              <div
+                key={source.id}
+                className="name"
+                onClick={() => sourceContext.sendSelectedSource(source.id)}
+              >
                 {source.name}
               </div>
             );

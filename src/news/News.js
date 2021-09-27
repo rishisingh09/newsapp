@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { getHeadlinesUtils } from "../Utilities/Utilities";
+import NewsContext from "../Context/NewsContext";
 import Checkbox from "@mui/material/Checkbox";
 import "./news.css";
 import Divider from "@mui/material/Divider";
@@ -7,30 +8,33 @@ import Divider from "@mui/material/Divider";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 function News(props) {
+  const headlinesContext = useContext(NewsContext);
 
-  // const getHeadlines = async () => {
-  //   try {
-  //     const response = await getHeadlinesUtils(id);
-  //     setHeadLines(response.data.articles);
-  //   } catch (error) {}
-  // };
-
+  console.log(headlinesContext);
 
   return (
     <div>
       <div className="news">
-        <div className="newsSourceName">News Heading</div>
+        <div className="newsSourceName">{headlinesContext.selectedSource}</div>
         <Divider variant="middle" />
-        <div className="headlines">
-          <div className="imageContainer"></div>
-          <Divider orientation="vertical" variant="middle" flexItem />
-          <div className="headlineDetails">
-            <div className="heading">Hello</div>
-            <div className="timeDate">22:00</div>
-            <div className="star">
-              <Checkbox />
-            </div>
-          </div>
+        <div className="headlinesContainer">
+          {headlinesContext.headlines.map((headline) => {
+            return (
+              <div className="headlines">
+                <div className="imageContainer">
+                  <img className="image" src={headline.urlToImage} alt=""></img>
+                </div>
+                <Divider orientation="vertical" variant="middle" flexItem />
+                <div className="headlineDetails">
+                  <div className="heading">{headline.title}</div>
+                  <div className="timeDate">{headline.publishedAt}</div>
+                  <div className="star">
+                    <Checkbox />
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
