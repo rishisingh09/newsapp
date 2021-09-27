@@ -1,14 +1,12 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { getHeadlinesUtils } from "../Utilities/Utilities";
 import Checkbox from "@mui/material/Checkbox";
 import "./news.css";
 import Divider from "@mui/material/Divider";
-import NewsContext from "../Context/NewsContext";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 function News(props) {
-  const newsSource = useContext(NewsContext);
 
   // const getHeadlines = async () => {
   //   try {
@@ -17,7 +15,6 @@ function News(props) {
   //   } catch (error) {}
   // };
 
-  console.log(newsSource);
 
   return (
     <div>
