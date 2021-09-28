@@ -4,6 +4,7 @@ import NewsContext from "../Context/NewsContext";
 import Checkbox from "@mui/material/Checkbox";
 import "./news.css";
 import Divider from "@mui/material/Divider";
+import moment from "moment";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
@@ -19,8 +20,11 @@ function News(props) {
           {headlinesContext.headlines.map((headline) => {
             return (
               <div className="headlines" key={headline.id}>
-                <div className="imageContainer">
-                  <img className="image" src={headline.urlToImage} alt=""></img>
+                <div
+                  className="imageContainer"
+                  style={{ backgroundImage: `url(${headline.urlToImage})` }}
+                >
+                  {" "}
                 </div>
                 <Divider orientation="vertical" variant="middle" flexItem />
                 <div className="headlineDetails">
@@ -30,7 +34,11 @@ function News(props) {
                   >
                     {headline.title}
                   </div>
-                  <div className="timeDate">{headline.publishedAt}</div>
+                  <div className="timeDate">
+                    {moment(headline.publishedAt).format(
+                      "MMMM Do YYYY, h:mm:ss a"
+                    )}
+                  </div>
                   <div className="star">
                     <Checkbox />
                   </div>

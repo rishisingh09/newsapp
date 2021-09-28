@@ -36,10 +36,10 @@ function NewsHome(props) {
     } catch (error) {}
   };
 
-  useEffect(() => {
-    getNews();
-    getHeadlines();
-  }, [selectedSource]);
+  // useEffect(() => {
+  //   getNews();
+  //   getHeadlines();
+  // }, [selectedSource]);
 
 
   return (
