@@ -5,13 +5,20 @@ import Details from "../Details/Details";
 import Sources from "../Sources/Sources";
 import News from "../News/News";
 import "./newsHome.css";
+import Favourite from "../common/Favourite";
 
 function NewsHome(props) {
+  const [favourites, setFavourites] = useState([]);
   const [sources, setSources] = useState([]);
   const [headlines, setHeadLines] = useState([]);
   const [selectedSource, setSelectedSource] = useState("");
   const [selectedId, setSelectedId] = useState("");
   const [news, setNews] = useState({});
+
+  const addfavourite = (item) => {
+    const newFavouriteList = [...favourites, item];
+    setFavourites(newFavouriteList);
+  };
 
   const handleSelectSource = (id, name) => {
     setSelectedSource(name);
@@ -41,14 +48,15 @@ function NewsHome(props) {
   //   getHeadlines();
   // }, [selectedSource]);
 
-
   return (
     <NewsContext.Provider
       value={{
+        Favourite,
         sources,
         headlines,
         selectedSource,
         news,
+        hadleFavouriteClicked: addfavourite,
         sendSelectedSource: handleSelectSource,
         sendSelectedHeadline: handleSelectedHeadline,
       }}

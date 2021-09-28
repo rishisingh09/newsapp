@@ -5,6 +5,7 @@ import Checkbox from "@mui/material/Checkbox";
 import "./news.css";
 import Divider from "@mui/material/Divider";
 import moment from "moment";
+import Favourite from "../common/Favourite";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
@@ -19,7 +20,7 @@ function News(props) {
         <div className="headlinesContainer">
           {headlinesContext.headlines.map((headline) => {
             return (
-              <div className="headlines" key={headline.id}>
+              <div className="headlines" key={headline.source.id}>
                 <div
                   className="imageContainer"
                   style={{ backgroundImage: `url(${headline.urlToImage})` }}
@@ -39,8 +40,15 @@ function News(props) {
                       "MMMM Do YYYY, h:mm:ss a"
                     )}
                   </div>
-                  <div className="star">
-                    <Checkbox />
+                  <div
+                    className="star"
+                    onClick={() => {
+                      headlinesContext.hadleFavouriteClicked(
+                        headline.source.id
+                      );
+                    }}
+                  >
+                    <headlinesContext.Favourite />
                   </div>
                 </div>
               </div>
