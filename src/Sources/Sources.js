@@ -1,27 +1,11 @@
-import React, { useState } from "react";
-import { getNewsUtils } from "../Utilities/Utilities";
-import "./sources.css";
+import React, { useEffect, useState, useContext } from "react";
+import NewsContext from "../Context/NewsContext";
 import lang from "../constants/strings";
 import Divider from "@mui/material/Divider";
+import "./sources.css";
 
 function Sources(props) {
-  const [news, setNews] = useState([]);
-
-  const handleClick = (source) => {
-    props.sendData(source);
-  };
-
-  const getNews = async () => {
-    try {
-      const response = await getNewsUtils();
-      setNews(response.data.sources);
-    } catch (error) {}
-
-  };
-
-  // useEffect(() => {
-  //   getNews();
-  // }, []);
+  const sourceContext = useContext(NewsContext);
 
   return (
     <div>
@@ -29,12 +13,12 @@ function Sources(props) {
         <div className="header">{lang.SOURCES}</div>
         <Divider variant="middle" />
         <div className="sourceName">
-          {news.map((source) => {
+          {sourceContext.sources.map((source) => {
             return (
               <div
                 key={source.id}
                 className="name"
-                onClick={() => handleClick(source)}
+                onClick={() => sourceContext.sendSelectedSource(source.id, source.name)}
               >
                 {source.name}
               </div>

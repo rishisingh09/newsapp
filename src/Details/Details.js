@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./details.css";
 import { Divider } from "@mui/material";
+import NewsContext from "../Context/NewsContext";
 
 function Details(props) {
+  const detailContext = useContext(NewsContext);
+
   return (
     <div>
       <div className="details">
         <div className="headlineContainer">
-          <div className="headlineDetailsContainer"></div>
+          <div className="headlineDetailsContainer">{detailContext.news.title}</div>
           <Divider orientation="vertical" variant="middle" flexItem />
           <div className="starContainer"></div>
         </div>
         <div className="bigImageContainer">
-          <img></img>
+          <img src={detailContext.news.urlToImage} alt=""></img>
         </div>
-        <div className="newsDescription"></div>
+        <div className="newsDescription">{detailContext.news.description}</div>
       </div>
     </div>
   );
