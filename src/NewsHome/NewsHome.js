@@ -26,7 +26,6 @@ function NewsHome(props) {
     try {
       const response = await getHeadlinesUtils(selectedId);
       setHeadLines(response.data.articles);
-      console.log(response.data.articles);
     } catch (error) {}
   };
 
@@ -41,6 +40,7 @@ function NewsHome(props) {
   //   getNews();
   //   getHeadlines();
   // }, [selectedSource]);
+
 
   return (
     <NewsContext.Provider

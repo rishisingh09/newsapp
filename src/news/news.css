@@ -65,6 +65,11 @@ hr.MuiDivider-root.MuiDivider-middle.MuiDivider-vertical.MuiDivider-flexItem.css
   color: black;
   font-size: 12px;
   font-weight: 500;
+  cursor: pointer;
+}
+
+.heading:hover {
+  text-decoration: underline;
 }
 
 .timeDate {

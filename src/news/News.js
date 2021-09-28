@@ -10,8 +10,6 @@ const label = { inputProps: { "aria-label": "Checkbox demo" } };
 function News(props) {
   const headlinesContext = useContext(NewsContext);
 
-  console.log(headlinesContext);
-
   return (
     <div>
       <div className="news">
@@ -20,7 +18,7 @@ function News(props) {
         <div className="headlinesContainer">
           {headlinesContext.headlines.map((headline) => {
             return (
-              <div className="headlines">
+              <div className="headlines" key={headline.id}>
                 <div className="imageContainer">
                   <img className="image" src={headline.urlToImage} alt=""></img>
                 </div>

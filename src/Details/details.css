@@ -23,6 +23,8 @@
   background-color: #ffffff;
   border-radius: 10px;
   margin-right: 10px;
+  padding: 5px;
+
 }
 
 .starContainer {
@@ -42,6 +44,12 @@
   padding: 5px;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.bigImageContainer img {
+  height: 95%;
+  width: auto;
 }
 
 .newsDescription {
