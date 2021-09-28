@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./details.css";
 import { Divider } from "@mui/material";
+import NewsContext from "../Context/NewsContext";
 
 function Details(props) {
+  const detailContext = useContext(NewsContext);
+  
   return (
     <div>
       <div className="details">

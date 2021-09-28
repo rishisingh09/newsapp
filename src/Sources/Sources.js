@@ -18,7 +18,7 @@ function Sources(props) {
               <div
                 key={source.id}
                 className="name"
-                onClick={() => sourceContext.sendSelectedSource(source.id)}
+                onClick={() => sourceContext.sendSelectedSource(source.id, source.name)}
               >
                 {source.name}
               </div>

@@ -26,7 +26,12 @@ function News(props) {
                 </div>
                 <Divider orientation="vertical" variant="middle" flexItem />
                 <div className="headlineDetails">
-                  <div className="heading">{headline.title}</div>
+                  <div
+                    className="heading"
+                    onClick={headlinesContext.sendSelectedHeadline(headline)}
+                  >
+                    {headline.title}
+                  </div>
                   <div className="timeDate">{headline.publishedAt}</div>
                   <div className="star">
                     <Checkbox />

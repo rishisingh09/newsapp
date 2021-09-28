@@ -42,8 +42,8 @@
 }
 
 .image {
-  width: 100%;
-  height: auto;
+  height: 100%;
+  width: fit-content;
   border-radius: 10px;
   margin: auto;
 }
@@ -65,7 +65,6 @@ hr.MuiDivider-root.MuiDivider-middle.MuiDivider-vertical.MuiDivider-flexItem.css
   color: black;
   font-size: 12px;
   font-weight: 500;
-  max-height: 20px;
 }
 
 .timeDate {

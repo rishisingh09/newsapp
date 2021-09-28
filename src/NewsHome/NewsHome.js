@@ -10,14 +10,21 @@ function NewsHome(props) {
   const [sources, setSources] = useState([]);
   const [headlines, setHeadLines] = useState([]);
   const [selectedSource, setSelectedSource] = useState("");
+  const [selectedId, setSelectedId] = useState("");
+  const [news, setNews] = useState({});
 
-  const handleSelectSource = (name) => {
+  const handleSelectSource = (id, name) => {
     setSelectedSource(name);
+    setSelectedId(id);
+  };
+
+  const handleSelectedHeadline = (receivedNews) => {
+    setNews(receivedNews);
   };
 
   const getHeadlines = async () => {
     try {
-      const response = await getHeadlinesUtils(selectedSource);
+      const response = await getHeadlinesUtils(selectedId);
       setHeadLines(response.data.articles);
       console.log(response.data.articles);
     } catch (error) {}
@@ -41,7 +48,9 @@ function NewsHome(props) {
         sources,
         headlines,
         selectedSource,
+        news,
         sendSelectedSource: handleSelectSource,
+        sendSelectedHeadline: handleSelectedHeadline,
       }}
     >
       <div className="container">
