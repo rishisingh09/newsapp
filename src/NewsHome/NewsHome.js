@@ -3,7 +3,7 @@ import { getNewsUtils, getHeadlinesUtils } from "../Utilities/Utilities";
 import NewsContext from "../Context/NewsContext";
 import Details from "../Details/Details";
 import Sources from "../Sources/Sources";
-import News from "../news/News";
+import News from "../News/News";
 import "./newsHome.css";
 
 function NewsHome(props) {
@@ -36,10 +36,10 @@ function NewsHome(props) {
     } catch (error) {}
   };
 
-  // useEffect(() => {
-  //   getNews();
-  //   getHeadlines();
-  // }, [selectedSource]);
+  useEffect(() => {
+    getNews();
+    getHeadlines();
+  }, [selectedSource]);
 
 
   return (
