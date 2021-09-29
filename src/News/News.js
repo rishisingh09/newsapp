@@ -4,7 +4,6 @@ import "./news.css";
 import Divider from "@mui/material/Divider";
 import moment from "moment";
 
-
 function News(props) {
   const headlinesContext = useContext(NewsContext);
 
@@ -38,15 +37,22 @@ function News(props) {
                       "MMMM Do YYYY, h:mm:ss a"
                     )}
                   </div>
-                  <div
-                    className="star"
-                    onClick={() => {
-                      headlinesContext.hadleFavouriteClicked(
-                        headline.source.id
-                      );
-                    }}
-                  >
-                    <headlinesContext.Favourite />
+                  <div className="star">
+                    {headlinesContext.favourites.map((fav) => {}) ? (
+                      <headlinesContext.Favourite
+                        color="red"
+                        onClick={() => {
+                          headlinesContext.hadleFavouriteClicked(headline);
+                        }}
+                      />
+                    ) : (
+                      <headlinesContext.Favourite
+                        color="gray"
+                        onClick={() => {
+                          headlinesContext.hadleFavouriteClicked(headline);
+                        }}
+                      />
+                    )}
                   </div>
                 </div>
               </div>

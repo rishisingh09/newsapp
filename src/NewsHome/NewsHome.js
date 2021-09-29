@@ -49,6 +49,8 @@ function NewsHome(props) {
     getHeadlines();
   }, [selectedSource.getHeadlines, selectedId]);
 
+  console.log(favourites);
+
   return (
     <NewsContext.Provider
       value={{
