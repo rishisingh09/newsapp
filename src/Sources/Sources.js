@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useContext } from "react";
 import NewsContext from "../Context/NewsContext";
 import lang from "../constants/strings";
 import Divider from "@mui/material/Divider";

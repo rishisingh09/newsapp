@@ -1,13 +1,9 @@
-import React, { useEffect, useState, useContext } from "react";
-import { getHeadlinesUtils } from "../Utilities/Utilities";
+import React, { useContext } from "react";
 import NewsContext from "../Context/NewsContext";
-import Checkbox from "@mui/material/Checkbox";
 import "./news.css";
 import Divider from "@mui/material/Divider";
 import moment from "moment";
-import Favourite from "../common/Favourite";
 
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 function News(props) {
   const headlinesContext = useContext(NewsContext);

@@ -25,6 +25,7 @@
   height: auto;
   width: 95%;
   background-color: lightgray;
+  background-position: center;
   border-radius: 10px;
   display: flex;
   padding: 5px;
@@ -32,7 +33,7 @@
 }
 
 .imageContainer {
-  height: 95%;
+  height: 80px;
   width: 30%;
   background-color: #ffffff;
   border-radius: 10px;
