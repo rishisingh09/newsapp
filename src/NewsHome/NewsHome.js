@@ -29,12 +29,7 @@ function NewsHome(props) {
     setNews(receivedNews);
   };
 
-  const getHeadlines = async () => {
-    try {
-      const response = await getHeadlinesUtils(selectedId);
-      setHeadLines(response.data.articles);
-    } catch (error) {}
-  };
+ 
 
   const getNews = async () => {
     try {
@@ -44,9 +39,15 @@ function NewsHome(props) {
   };
 
   useEffect(() => {
+    const getHeadlines = async () => {
+      try {
+        const response = await getHeadlinesUtils(selectedId);
+        setHeadLines(response.data.articles);
+      } catch (error) {}
+    };
     getNews();
     getHeadlines();
-  }, [selectedSource]);
+  }, [selectedSource.getHeadlines, selectedId]);
 
   return (
     <NewsContext.Provider
