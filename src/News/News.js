@@ -31,7 +31,9 @@ function News(props) {
                 <div className="headlineDetails">
                   <div
                     className="heading"
-                    onClick={headlinesContext.sendSelectedHeadline(headline)}
+                    onClick={() => {
+                      headlinesContext.sendSelectedHeadline(headline);
+                    }}
                   >
                     {headline.title}
                   </div>

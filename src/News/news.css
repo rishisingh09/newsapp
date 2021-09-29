@@ -22,7 +22,7 @@
 .headlines {
   margin-top: 10px;
   margin-left: 10px;
-  height: 100px;
+  height: auto;
   width: 95%;
   background-color: lightgray;
   border-radius: 10px;

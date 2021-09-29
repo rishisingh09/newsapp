@@ -43,14 +43,15 @@ function NewsHome(props) {
     } catch (error) {}
   };
 
-  // useEffect(() => {
-  //   getNews();
-  //   getHeadlines();
-  // }, [selectedSource]);
+  useEffect(() => {
+    getNews();
+    getHeadlines();
+  }, [selectedSource]);
 
   return (
     <NewsContext.Provider
       value={{
+        favourites,
         Favourite,
         sources,
         headlines,

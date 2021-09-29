@@ -18,7 +18,9 @@ function Sources(props) {
               <div
                 key={source.id}
                 className="name"
-                onClick={() => sourceContext.sendSelectedSource(source.id, source.name)}
+                onClick={() =>
+                  sourceContext.sendSelectedSource(source.id, source.name)
+                }
               >
                 {source.name}
               </div>
@@ -28,7 +30,9 @@ function Sources(props) {
         <div className="sourceName"></div>
         <Divider variant="middle" />
         <div className="favourite">
-          <div className="count">{lang.FAVOURITES} :</div>
+          <div className="count">
+            {lang.FAVOURITES} : {sourceContext.favourites.length}
+          </div>
         </div>
       </div>
     </div>
