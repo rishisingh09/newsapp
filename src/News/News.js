@@ -47,7 +47,11 @@ function News(props) {
                         headlinesContext.removeFavouriteClicked(headline.url);
                       }}
                     >
-                      <headlinesContext.Favourite color="red" />
+                      <headlinesContext.Favourite
+                        color="red"
+                        width="16"
+                        height="16"
+                      />
                     </div>
                   ) : (
                     <div
@@ -56,7 +60,11 @@ function News(props) {
                         headlinesContext.handleFavouriteClicked(headline);
                       }}
                     >
-                      <headlinesContext.Favourite color="gray" />
+                      <headlinesContext.Favourite
+                        color="gray"
+                        width="16"
+                        height="16"
+                      />
                     </div>
                   )}
                 </div>

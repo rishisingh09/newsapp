@@ -18,9 +18,9 @@ function Details(props) {
             {detailContext.favourites.some(
               (item) => item === detailContext.news
             ) ? (
-              <detailContext.Favourite color="red" />
+              <detailContext.Favourite color="red" width="30" height="30" />
             ) : (
-              <detailContext.Favourite color="gray" />
+              <detailContext.Favourite color="gray" width="30" height="30" />
             )}
           </div>
         </div>

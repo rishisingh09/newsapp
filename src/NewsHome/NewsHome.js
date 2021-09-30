@@ -15,9 +15,14 @@ function NewsHome(props) {
   const [selectedId, setSelectedId] = useState("");
   const [news, setNews] = useState({});
 
+  const saveFavouriteNews = (items) => {
+    localStorage.setItem("favouriteNews", JSON.stringify(items));
+  };
+
   const addfavourite = (item) => {
     const newFavouriteList = [...favourites, item];
     setFavourites(newFavouriteList);
+    saveFavouriteNews(newFavouriteList);
   };
 
   const removeFavourite = (url) => {
@@ -41,18 +46,22 @@ function NewsHome(props) {
     } catch (error) {}
   };
 
-  useEffect(() => {
-    const getHeadlines = async () => {
-      try {
-        const response = await getHeadlinesUtils(selectedId);
-        setHeadLines(response.data.articles);
-      } catch (error) {}
-    };
-    getNews();
-    getHeadlines();
-  }, [selectedSource.getHeadlines, selectedId]);
+  // useEffect(() => {
+  //   const getHeadlines = async () => {
+  //     try {
+  //       const response = await getHeadlinesUtils(selectedId);
+  //       setHeadLines(response.data.articles);
+  //     } catch (error) {}
+  //   };  
+  //   getNews();
+  //   getHeadlines();
+  // }, [selectedSource.getHeadlines, selectedId]);
 
-  console.log(favourites);
+  useEffect(() => {
+    const savedNews = localStorage.getItem("favouriteNews");
+    const favouriteNews = JSON.parse(savedNews);
+    setFavourites(favouriteNews);
+  }, []);
 
   return (
     <NewsContext.Provider
