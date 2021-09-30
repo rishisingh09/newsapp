@@ -20,6 +20,11 @@ function NewsHome(props) {
     setFavourites(newFavouriteList);
   };
 
+  const removeFavourite = (item) => {
+    const newFavouriteList = item.url !== favourites.url;
+    setFavourites(newFavouriteList);
+  };
+
   const handleSelectSource = (id, name) => {
     setSelectedSource(name);
     setSelectedId(id);
@@ -29,8 +34,6 @@ function NewsHome(props) {
     setNews(receivedNews);
   };
 
- 
-
   const getNews = async () => {
     try {
       const response = await getNewsUtils();
@@ -38,18 +41,18 @@ function NewsHome(props) {
     } catch (error) {}
   };
 
-  useEffect(() => {
-    const getHeadlines = async () => {
-      try {
-        const response = await getHeadlinesUtils(selectedId);
-        setHeadLines(response.data.articles);
-      } catch (error) {}
-    };
-    getNews();
-    getHeadlines();
-  }, [selectedSource.getHeadlines, selectedId]);
+  // useEffect(() => {
+  //   const getHeadlines = async () => {
+  //     try {
+  //       const response = await getHeadlinesUtils(selectedId);
+  //       setHeadLines(response.data.articles);
+  //     } catch (error) {}
+  //   };
+  //   getNews();
+  //   getHeadlines();
+  // }, [selectedSource.getHeadlines, selectedId]);
 
-  console.log(favourites);
+  // console.log(favourites);
 
   return (
     <NewsContext.Provider
@@ -60,7 +63,8 @@ function NewsHome(props) {
         headlines,
         selectedSource,
         news,
-        hadleFavouriteClicked: addfavourite,
+        removeFavouriteClicked: removeFavourite,
+        handleFavouriteClicked: addfavourite,
         sendSelectedSource: handleSelectSource,
         sendSelectedHeadline: handleSelectedHeadline,
       }}

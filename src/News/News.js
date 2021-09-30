@@ -37,23 +37,27 @@ function News(props) {
                       "MMMM Do YYYY, h:mm:ss a"
                     )}
                   </div>
-                  <div className="star">
-                    {headlinesContext.favourites.map((fav) => {}) ? (
-                      <headlinesContext.Favourite
-                        color="red"
-                        onClick={() => {
-                          headlinesContext.hadleFavouriteClicked(headline);
-                        }}
-                      />
-                    ) : (
-                      <headlinesContext.Favourite
-                        color="gray"
-                        onClick={() => {
-                          headlinesContext.hadleFavouriteClicked(headline);
-                        }}
-                      />
-                    )}
-                  </div>
+                  {headlinesContext.favourites.some(
+                    (item) => item === headline
+                  ) ? (
+                    <div
+                      className="star"
+                      onClick={() => {
+                        headlinesContext.removeFavouriteClicked(headline);
+                      }}
+                    >
+                      <headlinesContext.Favourite color="red" />
+                    </div>
+                  ) : (
+                    <div
+                      className="star"
+                      onClick={() => {
+                        headlinesContext.handleFavouriteClicked(headline);
+                      }}
+                    >
+                      <headlinesContext.Favourite color="gray" />
+                    </div>
+                  )}
                 </div>
               </div>
             );
