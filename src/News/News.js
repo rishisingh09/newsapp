@@ -15,7 +15,7 @@ function News(props) {
         <div className="headlinesContainer">
           {headlinesContext.headlines.map((headline) => {
             return (
-              <div className="headlines" key={headline.source.id}>
+              <div className="headlines" key={headline.url}>
                 <div
                   className="imageContainer"
                   style={{ backgroundImage: `url(${headline.urlToImage})` }}
@@ -43,7 +43,8 @@ function News(props) {
                     <div
                       className="star"
                       onClick={() => {
-                        headlinesContext.removeFavouriteClicked(headline);
+                        console.log(headline);
+                        headlinesContext.removeFavouriteClicked(headline.url);
                       }}
                     >
                       <headlinesContext.Favourite color="red" />
