@@ -10,9 +10,19 @@ function Details(props) {
     <div>
       <div className="details">
         <div className="headlineContainer">
-          <div className="headlineDetailsContainer">{detailContext.news.title}</div>
+          <div className="headlineDetailsContainer">
+            {detailContext.news.title}
+          </div>
           <Divider orientation="vertical" variant="middle" flexItem />
-          <div className="starContainer"></div>
+          <div className="starContainer">
+            {detailContext.favourites.some(
+              (item) => item === detailContext.news
+            ) ? (
+              <detailContext.Favourite color="red" />
+            ) : (
+              <detailContext.Favourite color="gray" />
+            )}
+          </div>
         </div>
         <div className="bigImageContainer">
           <img src={detailContext.news.urlToImage} alt=""></img>

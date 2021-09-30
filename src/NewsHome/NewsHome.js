@@ -21,7 +21,9 @@ function NewsHome(props) {
   };
 
   const removeFavourite = (item) => {
-    const newFavouriteList = item.url !== favourites.url;
+    const newFavouriteList = favourites.filter(
+      (item) => item.url !== favourites.url
+    );
     setFavourites(newFavouriteList);
   };
 
