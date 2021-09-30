@@ -46,16 +46,16 @@ function NewsHome(props) {
     } catch (error) {}
   };
 
-  // useEffect(() => {
-  //   const getHeadlines = async () => {
-  //     try {
-  //       const response = await getHeadlinesUtils(selectedId);
-  //       setHeadLines(response.data.articles);
-  //     } catch (error) {}
-  //   };  
-  //   getNews();
-  //   getHeadlines();
-  // }, [selectedSource.getHeadlines, selectedId]);
+  useEffect(() => {
+    const getHeadlines = async () => {
+      try {
+        const response = await getHeadlinesUtils(selectedId);
+        setHeadLines(response.data.articles);
+      } catch (error) {}
+    };  
+    getNews();
+    getHeadlines();
+  }, [selectedSource.getHeadlines, selectedId]);
 
   useEffect(() => {
     const savedNews = localStorage.getItem("favouriteNews");
