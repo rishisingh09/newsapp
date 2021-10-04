@@ -52,7 +52,7 @@ function NewsHome(props) {
         const response = await getHeadlinesUtils(selectedId);
         setHeadLines(response.data.articles);
       } catch (error) {}
-    };  
+    };
     getNews();
     getHeadlines();
   }, [selectedSource.getHeadlines, selectedId]);
@@ -80,11 +80,13 @@ function NewsHome(props) {
     >
       <div className="container">
         <div className="newsContainer">
-          <div className="firstSection">
-            <Sources />
-          </div>
-          <div className="secondSection">
-            <News />
+          <div className="firstContainer">
+            <div className="firstSection">
+              <Sources />
+            </div>
+            <div className="secondSection">
+              <News />
+            </div>
           </div>
           <div className="thirdSection">
             <Details />

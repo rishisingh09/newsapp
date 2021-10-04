@@ -24,10 +24,14 @@ function Details(props) {
             )}
           </div>
         </div>
-        <div className="bigImageContainer">
-          <img src={detailContext.news.urlToImage} alt=""></img>
+        <div className="bigContainer">
+          <div className="bigImageContainer">
+            <img src={detailContext.news.urlToImage} alt=""></img>
+          </div>
+          <div className="newsDescription">
+            {detailContext.news.description}
+          </div>
         </div>
-        <div className="newsDescription">{detailContext.news.description}</div>
       </div>
     </div>
   );
